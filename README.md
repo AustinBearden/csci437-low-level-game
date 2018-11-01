@@ -17,3 +17,7 @@ For this exercise, the language does not matter, but you will need to build a ba
 * Transformation - translation, rotation, and scaling
 
 You may build a game or you can build an engine witha a simple demo on top, as long as you illustrate the ideas.
+
+### Implementation
+
+Basic JavaScript game motion engine that will be specifically taylored for providing action to React-360 games
