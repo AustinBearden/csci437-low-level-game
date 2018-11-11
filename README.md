@@ -20,8 +20,10 @@ You may build a game or you can build an engine with a a simple demo on top, as 
 
 ### Implementation
 
-A game that is built from ground up without using a pre-built game engine:
+A game, written in JavaScript, that is built from the ground up without using a pre-built game engine:
 
-1) Hi 
+1) Arrow-key input
 
-2) Hey
+2) Game time limit
+
+3) Side scroller background
