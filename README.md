@@ -16,8 +16,12 @@ For this exercise, the language does not matter, but you will need to build a ba
 * Boundary management
 * Transformation - translation, rotation, and scaling
 
-You may build a game or you can build an engine witha a simple demo on top, as long as you illustrate the ideas.
+You may build a game or you can build an engine with a a simple demo on top, as long as you illustrate the ideas.
 
 ### Implementation
 
-Basic JavaScript game motion engine that will be specifically taylored for providing action to React-360 games
+A game that is built from ground up without using a pre-built game engine:
+
+1) Hi 
+
+2) Hey
