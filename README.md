@@ -20,7 +20,7 @@ You may build a game or you can build an engine with a a simple demo on top, as 
 
 ### Implementation
 
-A basic game engine, written in Java, that is built from the ground up without using a pre-built game engine:
+A basic game engine, written in python 3, that is built from the ground up without using a pre-built game engine:
 
 1) Arrow-key input
 
