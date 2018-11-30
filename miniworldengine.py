@@ -22,62 +22,6 @@ class MiniWorld():
         self.mWScreen.fill((12, 0, 12))
         self.go = True;
 
-    # def setSize(self, width, height):
-    #     # how do I change the size of the screen ?
-    #     print("Oh yeah!")
-
-    # def setColor(self, red, yellow, blue):
-    #     color = red, yellow, blue
-    #     self.mWScreen.fill(color)
-
-    
-
-
-        
-    # change/set color
-    # change size
-
-# end of MiniWorld class (basically the scene for the engine)
-
-# # class for sprite
-# class MiniThing(pygame.sprite.Sprite, image):
-#     def __init__(self):
-#         # initiate a pygame sprite
-
-
-
-#     # change sprite's image
-#     def setImage(image):
-#         # content of setImage() method
-
-#     # set sprite's angle
-#     def setAngle(angleDegrees):
-#         # content of setAngle() method
-
-#     # change sprite's angle by specified amount
-#     def changeAngle(angleDegrees):
-#         # content of changeAngle() method
-
-#     # set sprite's color + dimension (this only works if no image loaded)
-#     def setDimensionColor(color, width, height):
-#         # content of setDimensionColor() method
-
-#     # change the sprite's speed
-#     def setSpeed(speed):
-#         # content of setSpeed() method
-
-#     # set the sprite's position
-#     def setPosition(x, y):
-#         # content of setPosition() method
-
-    
-#     # change the sprite's position by certain x and certain y
-#     def changePosition(x, y):
-#         # content of changePosition() method
-
-
-
-# end of MiniThing class (basically the sprite class for the engine)
     
 
 def main():
