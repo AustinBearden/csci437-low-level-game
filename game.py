@@ -7,7 +7,7 @@ Assignment: csci437-low-level-game
 
 import sys
 import pygame
-import miniworldengine
+import miniworldengine # import the engine
 
 
 '''
