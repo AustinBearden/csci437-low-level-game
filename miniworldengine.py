@@ -25,6 +25,9 @@ class MiniWorld():
         self.mWScreen.fill((12, 0, 12))
         self.go = True
         self.clock = pygame.time.Clock()
+
+    def activate(self):
+        self.mWScreen.fill((240, 240, 255))
         
 
 # sprite class
@@ -112,22 +115,24 @@ class MiniThing(MiniWorld, pygame.sprite.Sprite):
         
     # Update method
     def update(self):
+        self.theSurface.fill((240, 240, 255))
         self.theSurface.blit(self.image, (self.x, self.y))
+
+## end of MiniThing class
 
     
 
+'''
+    Update loop:
+    All content in this while loop is the game loop section
+    Thanks to Pete Shinners for the code at this address: https://www.pygame.org/docs/tut/PygameIntro.html
+    '''
 
 def main():
     coolDude = MiniWorld(1000, 900)
-    color = (255, 0, 0)
-    
-    '''
-    Update loop:
-    All content in this while loop is the game loop section
-    Thanks to Pete Shinners to the code here: https://www.pygame.org/docs/tut/PygameIntro.html
-    '''
-    coolDude.mWScreen.fill((240, 240, 255))
-    coolThing = MiniThing(coolDude,color, 24, 24)
+    red_color = (255, 0, 0)
+    coolDude.activate()
+    coolThing = MiniThing(coolDude,red_color, 24, 24)
 
     while 1:
             for event in pygame.event.get():
@@ -137,14 +142,11 @@ def main():
                 ...was empty game loop
             '''
     
-            coolThing.keyActions(event, 5)
+            coolThing.keyActions(event, 10)
             coolThing.update()
             pygame.display.flip()
-            
 
     pygame.quit()
-
-
 
 if __name__ == "__main__":
     main()
