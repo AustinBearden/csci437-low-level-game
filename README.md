@@ -22,10 +22,12 @@ You may build a game or you can build an engine with a a simple demo on top, as 
 
 ### Implementation
 
-A basic game engine, written in python 3, that is built from the ground up without using a pre-built game engine:
+A basic game engine, written in python 3, written on top of pygame:
 
-1) Arrow-key input
+    Use the documentation in the game.py file to understand how to use this python3 game engine
 
-2) Game time limit
+Special thanks to: https://pythonprogramming.net/pygame-python-3-part-1-intro/
 
-3) Side scroller background
+And to...
+<a href="https://www.pygame.org/docs/">Pygame</a>
+
