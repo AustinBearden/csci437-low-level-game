@@ -28,11 +28,21 @@ class MiniWorld():
 
     def activate(self):
         self.mWScreen.fill((240, 240, 255))
+
+    def update(self):
+        self.mWScreen.fill((240, 240, 255))
+
+    # helper methods
+    def getScreenWidth(self):
+        return self.inputWidth
+
+    def getScreenHeight(self):
+        return self.inputHeight
+
+# End of MiniWorld class
         
 
 # sprite class
-# parameters:
-    #
 class MiniThing(MiniWorld, pygame.sprite.Sprite):
     # this will subclass Sprite
 
@@ -44,11 +54,14 @@ class MiniThing(MiniWorld, pygame.sprite.Sprite):
         self.image.fill(color)
 
         self.rect = self.image.get_rect()
-
+        self.width = width
+        self.height = height
         self.x = 0
         self.y = 0
         self.speed = 0
+        self.willCheck = False
         self.theSurface = MiniWorld.mWScreen
+        self.world = MiniWorld
        
         
     # end of constructor method
@@ -80,6 +93,12 @@ class MiniThing(MiniWorld, pygame.sprite.Sprite):
 
     def changeSpeedBy(self, speedBy):
         self.speed += speedBy
+
+    def setWillCheck(self, willCheck):
+        self.boolVal = willCheck
+
+    def getWillCheck(self):
+        return self.boolVal
     
     # end of helper and action methods
 
@@ -90,23 +109,35 @@ class MiniThing(MiniWorld, pygame.sprite.Sprite):
     def keyActions(self, event, change):
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                print("Left", change)
                 self.changeXby(-change)
             if event.key == pygame.K_RIGHT:
-                print("Right", change)
                 self.changeXby(change)
             if event.key == pygame.K_UP:
-                print("Up", change)
                 self.changeYby(-change)
             if event.key == pygame.K_DOWN:
-                print("Down", change)
                 self.changeYby(change)
+    
+
+    # bounds checking
+    # check is a boolean for deciding whether we should check bounds or not
+    def applyBounds(self):
+        if self.getWillCheck():
+            width = self.world.getScreenWidth()
+            height = self.world.getScreenHeight()
+            if self.x >= width:
+                self.setX(width - self.width)
+            if self.x <= 0:
+                self.setX(0)
+            if self.y <= 0:
+                self.setY(0)
+            if self.y >= height:
+                self.setY(height - self.height)
         
         
     # Update method
     def update(self, event):
         self.keyActions(event, self.speed)
-        self.theSurface.fill((240, 240, 255))
+        self.applyBounds()
         self.theSurface.blit(self.image, (self.x, self.y))
         
 
