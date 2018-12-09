@@ -3,6 +3,7 @@ Author: Austin Bearden
 Date Created: 11.22.2018
 Purpose: A high level game engine on top of pygame
 Assignment: csci437-low-level-game
+Last modified: 12.8.2018
 '''
 
 # Import pygame library of functions
@@ -131,7 +132,6 @@ def main():
     while 1:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT: sys.exit()
-                print(event)
 
             '''
                 ...was empty game loop
