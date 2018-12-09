@@ -47,8 +47,7 @@ class MiniThing(MiniWorld, pygame.sprite.Sprite):
 
         self.x = 0
         self.y = 0
-        self.dx = 0
-        self.dy = 0
+        self.speed = 0
         self.theSurface = MiniWorld.mWScreen
        
         
@@ -61,11 +60,8 @@ class MiniThing(MiniWorld, pygame.sprite.Sprite):
     def getY(self):
         return self.y
     
-    def getDX(self):
-        return self.dx
-
-    def getDY(self):
-        return self.dy
+    def getSpeed(self):
+        return self.speed
 
     def setX(self, x):
         self.x = x
@@ -73,11 +69,8 @@ class MiniThing(MiniWorld, pygame.sprite.Sprite):
     def setY(self, y):
         self.y = y
     
-    def setDX(self, dx):
-        self.dx = dx
-    
-    def setDY(self, dy):
-        self.dy = dy
+    def setSpeed(self, speed):
+        self.speed = speed
 
     def changeXby(self, x):
         self.x += x
@@ -85,11 +78,8 @@ class MiniThing(MiniWorld, pygame.sprite.Sprite):
     def changeYby(self, y):
         self.y += y
 
-    def changeDXby(self, dx):
-        self.dx += dx
-
-    def changeDYby(self, dy):
-        self.dy += dy
+    def changeSpeedBy(self, speedBy):
+        self.speed += speedBy
     
     # end of helper and action methods
 
@@ -114,9 +104,11 @@ class MiniThing(MiniWorld, pygame.sprite.Sprite):
         
         
     # Update method
-    def update(self):
+    def update(self, event):
+        self.keyActions(event, self.speed)
         self.theSurface.fill((240, 240, 255))
         self.theSurface.blit(self.image, (self.x, self.y))
+        
 
 ## end of MiniThing class
 
@@ -129,10 +121,11 @@ class MiniThing(MiniWorld, pygame.sprite.Sprite):
     '''
 
 def main():
-    coolDude = MiniWorld(1000, 900)
+    world = MiniWorld(1000, 900)
     red_color = (255, 0, 0)
-    coolDude.activate()
-    coolThing = MiniThing(coolDude,red_color, 24, 24)
+    world.activate()
+    thing = MiniThing(world,red_color, 24, 24)
+    thing.setSpeed(34)
 
     while 1:
             for event in pygame.event.get():
@@ -142,8 +135,7 @@ def main():
                 ...was empty game loop
             '''
     
-            coolThing.keyActions(event, 10)
-            coolThing.update()
+            thing.update(event)
             pygame.display.flip()
 
     pygame.quit()
