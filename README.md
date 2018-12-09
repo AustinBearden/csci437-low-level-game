@@ -3,6 +3,10 @@
 # csci437-low-level-game
 A basic game engine built from ground up
 
+Requires python3 and pygame. Run the example game by typing the following command:
+
+    python3 game.py
+
 
 ### Assignment Specifications:
 
