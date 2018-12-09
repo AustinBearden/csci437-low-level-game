@@ -134,14 +134,8 @@ def main():
                 print(event)
 
             '''
-                ...empty game loop
+                ...was empty game loop
             '''
-
-            
-            
-            
-            
-            #coolDude.update()
     
             coolThing.keyActions(event, 5)
             coolThing.update()
